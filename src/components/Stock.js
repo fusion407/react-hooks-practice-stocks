@@ -1,12 +1,21 @@
 import React from "react";
 
-function Stock() {
+function Stock({name, price, ticker, stockClick}) {
+  // function handleStockClick(event) {
+  //   event.preventDefault();
+  //   if(event.target.className === "card-body") {
+  //     console.log("card body clicked")
+  //     return event.target
+  //   } else {
+  //     return
+  //   }
+  // }
   return (
     <div>
-      <div className="card">
+      <div onClick={stockClick} className="card">
         <div className="card-body">
-          <h5 className="card-title">{"Compant Name"}</h5>
-          <p className="card-text">{"Stock Price"}</p>
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">{ticker}: {price}</p>
         </div>
       </div>
     </div>
